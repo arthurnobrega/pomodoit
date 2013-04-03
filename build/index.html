@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Pomodoro Tasks Manager</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div id="countdown"></div>
+    <div id="countdown-message"></div>
+
+    <script type="text/template" id="taskTemplate">
+        <%= description %> (<%= created %>)
+    </script>
+    <span id="dummy"></span>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/lib/require.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="countdown.js"></script>
+
+    <script type="text/javascript">
+        // The model for a task
+        var Task = Backbone.Model.extend({
+            defaults: {
+                description: '',
+                created: '00-00-0000'
+            }
+        });
+
+        // A list of tasks
+        var TaskCollection = Backbone.Collection.extend({
+            model: Task
+        });
+
+        // The view for a task
+        var TaskView = Backbone.View.extend({
+            tagName: 'li',
+            template: _.template($('#taskTemplate').html()),
+            initialize: function() {
+                this.render();
+            },
+            render: function() {
+                this.$el.html(this.template(this.model.toJSON()));
+            }
+        });
+
+        var task = new Task({description: 'Gravar CDs do Luciano', created: '31/03/2013'});
+        var taskView = new TaskView({model: task});
+        var task2 = new Task({description: 'Ligar pra mainha', created: '31/03/2013'});
+        var taskView2 = new TaskView({model: task2});
+
+        var taskCollection = new TaskCollection;
+        taskCollection.add(task);
+        taskCollection.add(task2);
+
+    </script>
+</body>
+</html>

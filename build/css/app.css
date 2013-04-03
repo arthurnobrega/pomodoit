@@ -1,0 +1,8 @@
+body {
+    font-family: Arial;
+}
+#countdown {
+    font-size: 20em;
+    text-align: center;
+    font-weight: bold;
+}
