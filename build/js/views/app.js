@@ -8,7 +8,7 @@ function(template, AddListView, EditListView) {
   var AppView = Backbone.View.extend({
     id: 'main',
     tagName: 'div',
-    // className: 'container-fluid',
+    className: 'container-fluid',
     el: '#todo-app',
     template: _.template(template),
 

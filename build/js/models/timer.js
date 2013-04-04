@@ -30,21 +30,10 @@ define(function() {
             this.set('_status', 'stopped');
             this.set('_secondsRemaining', 0);
             this._updateClock();
-            this._hideDiv();
             clearInterval(this.get('_interval'));
         },
         _playSound: function() {
             $("#dummy").html('<embed src="sounds/'+this.get('alarmSound')+'" hidden="true" autostart="true" loop="false" />');
-        },
-        _showDiv: function() {
-            if (!$('#timer-backdrop').is(':visible')) {
-                $('#timer, #timer-backdrop').fadeIn();
-                $('body').addClass('playing');
-            }
-        },
-        _hideDiv: function() {
-            $('#timer, #timer-backdrop').fadeOut();
-            $('body').removeClass('playing');
         },
         _updateClock: function() {
             var el = $('#timer');
@@ -53,13 +42,18 @@ define(function() {
             if (minutes < 10) minutes = "0" + minutes;
             var seconds = remaining % 60;
             if (seconds < 10) seconds = "0" + seconds;
-            this._showDiv();
+            if (!$('#timer-backdrop').is(':visible')) {
+                $('#timer, #timer-backdrop').fadeIn();
+                $('body').addClass('playing');
+            }
             var text = minutes + ':' + seconds;
             el.html(text);
             // if the time is 0 then end the counter
             if(this.get('_secondsRemaining') == 0 && this.get('_status') != 'stopped') {
                 this.set('_status', 'stopped');
-                this._hideDiv();
+                var el = $('#timer-message').html('O tempo acabou');
+                $('#timer, #timer-backdrop').fadeOut();
+                $('body').removeClass('playing');
                 clearInterval(this.get('_interval'));
                 this._playSound();
                 return;

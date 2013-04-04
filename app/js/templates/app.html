@@ -1,28 +1,41 @@
-<div class="row-fluid">
-  <div id="lists-panel">
-    <h1>Pomodoro Tasks</h1>
-    <ul id="task-lists" class="nav nav-tabs"></ul>
+<div id="lists-panel" class="row">
+  <h1>Pomodoro Tasks</h1>
+  <div class="btn-group pull-right">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+      <span class="icon-wrench"></span>
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="#" class="clear-complete">
+          <i class="icon-ok-circle"></i>
+          Clear Complete
+        </a>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <a href="#" id="edit-list-button">Edit this list</a>
+      </li>
+      <li>
+        <a href="#" class="delete-list" id="delete-list-button">Remove this list</a>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <a href="#" id="add-list-button">Add a new task list</a>
+      </li>
+    </ul>
   </div>
-  <div class="main-right-col">
-    <small class="pull-right" id="profile-container"></small>
-    <div>
-      <div id="sign-in-container"></div>
-      <div id="signed-in-container">
-        <ul class="nav nav-tabs" id="top-nav">
-          <li class="buttons">
-            <div class="btn-group">
-              <a href="#" class="btn" id="add-list-button"><i class="icon-plus"></i></a>
-              <a href="#" class="btn" id="edit-list-button"><i class="icon-cog"></i></a>
-              <a href="#" class="btn delete-list" id="delete-list-button"><i class="icon-trash"></i></a>
-              <a href="#" class="btn clear-complete"><i class="icon-ok-circle"></i> <span class="hide-tiny">Clear Complete</span></a>
-            </div>
-          </li>
-        </ul>
-        <div id="content-container">
-          <div id="list-editor"></div>
-          <div id="tasks-container"></div>
-        </div>
-      </div>
+  <ul id="task-lists" class="nav nav-tabs"></ul>
+</div>
+<div class="row">
+  <small class="pull-right" id="profile-container"></small>
+  <div id="sign-in-container"></div>
+  <div id="signed-in-container">
+    <div id="content-container">
+      <div id="list-editor"></div>
+      <div id="tasks-container"></div>
     </div>
   </div>
 </div>
+
+

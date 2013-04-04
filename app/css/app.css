@@ -9,14 +9,24 @@ ul#task-list {
   margin:0;
   padding:0;
 }
-body.playing ul#task-list {
+.playing ul#task-list {
   position: absolute;
-  z-index: 1041;
+  z-index: 1042;
+  margin-left: 16em;
+  margin-top: 12em;
+  color: #FFFFFF;
+}
+.playing .stop-timer-button {
+  display: block;
+  position: absolute;
+  z-index: 1042;
   margin-left: 16em;
   margin-top: 10em;
 }
 ul#task-list li {
   list-style: none;
+  padding:0;
+  margin:0 0 5px 0;
 }
 
 #timer {
@@ -38,4 +48,14 @@ ul#task-list li {
   background-color: #000000;
   opacity: 0.9;
   display: none;
+}
+.stop-timer-button {
+  display: none;
+}
+.completed {
+  text-decoration: line-through;
+}
+
+input[ type="text"] {
+  height: auto;
 }

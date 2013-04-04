@@ -1,7 +1,7 @@
 define(['text!templates/lists/menuitem.html', 'views/tasks/index', 'collections/tasks'], function(template, TasksIndexView, Tasks) {
   var ListMenuItemView = Backbone.View.extend({
     tagName: 'li',
-    className: 'list-menu-item dropdown',
+    className: 'list-menu-item',
 
     template: _.template(template),
 

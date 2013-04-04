@@ -1,7 +1,7 @@
 define(['text!templates/tasks/task.html', 'views/tasks/edit'], function(template, TaskEditView) {
   var TaskView = Backbone.View.extend({
     tagName: 'li',
-    className: 'controls task',
+    className: 'controls well task',
 
     template: _.template(template),
 

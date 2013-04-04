@@ -1,7 +1,7 @@
 define(['text!templates/tasks/index.html', 'views/tasks/task', 'views/tasks/edit', 'collections/tasks'], function(template, TaskView, TaskEditView, Tasks) {
   var TasksIndexView = Backbone.View.extend({
     tagName: 'div',
-    className: 'row',
+    className: 'row-fluid',
 
     template: _.template(template),
 
