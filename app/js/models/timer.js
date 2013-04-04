@@ -43,7 +43,8 @@ define(function() {
             var seconds = remaining % 60;
             if (seconds < 10) seconds = "0" + seconds;
             if (!$('#timer-backdrop').is(':visible')) {
-                $('#timer-backdrop').fadeIn();
+                $('#timer, #timer-backdrop').fadeIn();
+                $('body').addClass('playing');
             }
             var text = minutes + ':' + seconds;
             el.html(text);
@@ -51,7 +52,8 @@ define(function() {
             if(this.get('_secondsRemaining') == 0 && this.get('_status') != 'stopped') {
                 this.set('_status', 'stopped');
                 var el = $('#timer-message').html('O tempo acabou');
-                $('#timer-backdrop').fadeOut();
+                $('#timer, #timer-backdrop').fadeOut();
+                $('body').removeClass('playing');
                 clearInterval(this.get('_interval'));
                 this._playSound();
                 return;

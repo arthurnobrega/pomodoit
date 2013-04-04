@@ -8,8 +8,6 @@ define(['text!templates/tasks/task.html', 'views/tasks/edit'], function(template
     events: {
       'click': 'open'
     , 'change .check-task': 'toggle'
-    , 'click #play-timer-button': 'playPomodoro'
-    , 'click #stop-timer-button': 'stopPomodoro'
     },
 
     initialize: function(options) {
@@ -52,16 +50,6 @@ define(['text!templates/tasks/task.html', 'views/tasks/edit'], function(template
 
       this.model.save();
       return false;
-    },
-
-    playPomodoro: function(e) {
-      e.preventDefault();
-      window.pomodoit.timer.play();
-    },
-
-    stopPomodoro: function(e) {
-      e.preventDefault();
-      window.pomodoit.timer.stop();
     }
   });
 

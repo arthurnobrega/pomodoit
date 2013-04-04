@@ -1,1 +1,5 @@
-suite("App",function(){test("Should be present",function(){assert.ok(window.pomodoit)})});
+suite('App', function() {
+    test('Should be present', function() {
+        assert.ok(window.pomodoit);
+    });
+});

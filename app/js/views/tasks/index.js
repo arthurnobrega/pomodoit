@@ -7,6 +7,8 @@ define(['text!templates/tasks/index.html', 'views/tasks/task', 'views/tasks/edit
 
     events: {
       'submit .add-task': 'addTask'
+    , 'click .play-timer-button': 'playPomodoro'
+    , 'click .stop-timer-button': 'stopPomodoro'
     },
 
     initialize: function() {
@@ -68,6 +70,16 @@ define(['text!templates/tasks/index.html', 'views/tasks/task', 'views/tasks/edit
       }
       this.taskEditView = new TaskEditView({ model: task });
       this.$el.find('#selected-task').append(this.taskEditView.render().el);
+    },
+
+    playPomodoro: function(e) {
+      e.preventDefault();
+      window.pomodoit.timer.play();
+    },
+
+    stopPomodoro: function(e) {
+      e.preventDefault();
+      window.pomodoit.timer.stop();
     }
   });
 
