@@ -1,41 +1,52 @@
-<div id="lists-panel" class="row">
-  <h1>Pomodoro Tasks</h1>
-  <div class="btn-group pull-right">
-    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-      <span class="icon-wrench"></span>
-      <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="#" class="clear-complete">
-          <i class="icon-ok-circle"></i>
-          Clear Complete
-        </a>
-      </li>
-      <li class="divider"></li>
-      <li>
-        <a href="#" id="edit-list-button">Edit this list</a>
-      </li>
-      <li>
-        <a href="#" class="delete-list" id="delete-list-button">Remove this list</a>
-      </li>
-      <li class="divider"></li>
-      <li>
-        <a href="#" id="add-list-button">Add a new task list</a>
-      </li>
-    </ul>
+<div class="container">
+  <div id="lists-panel" class="row">
+    <h1>PomoDoIt</h1>
+    <div class="btn-group pull-right">
+      <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        <span class="icon-cogs"></span>
+        Settings
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="#" class="clear-complete">
+            <i class="icon-ok-circle"></i>
+            Clear Complete
+          </a>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <a href="#" id="edit-list-button">
+            <i class="icon-pencil"></i>
+            Edit this list
+          </a>
+        </li>
+        <li>
+          <a href="#" class="delete-list" id="delete-list-button">
+            <i class="icon-trash"></i>
+            Remove this list
+          </a>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <a href="#" id="add-list-button">
+            <i class="icon-plus"></i>
+            Add a new task list
+          </a>
+        </li>
+      </ul>
+    </div>
+    <ul id="task-lists" class="nav nav-tabs"></ul>
   </div>
-  <ul id="task-lists" class="nav nav-tabs"></ul>
-</div>
-<div class="row">
-  <small class="pull-right" id="profile-container"></small>
-  <div id="sign-in-container"></div>
-  <div id="signed-in-container">
-    <div id="content-container">
-      <div id="list-editor"></div>
-      <div id="tasks-container"></div>
+  <div class="row">
+    <small class="pull-right" id="profile-container"></small>
+    <div id="sign-in-container"></div>
+    <div id="signed-in-container">
+      <div id="content-container">
+        <div id="list-editor"></div>
+        <div id="tasks-container"></div>
+      </div>
     </div>
   </div>
 </div>
-
 

@@ -1,7 +1,7 @@
 body {
   height: 100%;
   background-image: url('../img/background-white.png');
-  font-family: Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-size: 90%;
 }
 
@@ -58,4 +58,9 @@ ul#task-list li {
 
 input[ type="text"] {
   height: auto;
+}
+
+.add-task input, .add-task button {
+  padding: 10px;
+  font-size: 14px;
 }
